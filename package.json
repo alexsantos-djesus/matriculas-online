@@ -1,0 +1,13 @@
+{
+  "name": "matriculas-online",
+  "private": true,
+  "workspaces": ["server", "web"],
+  "scripts": {
+    "start": "concurrently -n API,WEB -c green,cyan \"npm run dev -w server\" \"npm run dev -w web\"",
+    "dev": "npm run start",
+    "build": "npm run build -w server && npm run build -w web"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
